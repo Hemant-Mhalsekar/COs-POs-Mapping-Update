@@ -40,52 +40,137 @@
         <form id="courseForm">
           <div class="grid gap-5 md:grid-cols-2 mt-5">
             <div>
-              <label for="courseName">1. Name of Course:</label>
+              <label for="programmeName">1. Name of the Programme:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text" id="courseName" name="courseName" required placeholder="Ex. BCA"
+                type="text" id="programmeName" name="programmeName" required placeholder="Ex. BCA"
                 oninput="validateTextInput(this)" />
             </div>
             <div>
-              <label for="category">2. Name of category:</label>
+              <label for="department">2. Department:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text" id="category" name="category" required placeholder="Ex. "
+                type="text" id="department" name="department" required placeholder="Ex. Computer Application"
                 oninput="validateTextInput(this)" />
             </div>
             <div>
-              <label for="courseTeacher">3. Name of the Course Teacher:</label>
+              <label for="courseTeacher">3. Name of the Course Teacher/Teachers:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text" id="courseTeacher" name="courseTeacher" required placeholder="Ex. Krishnarao Rane"
                 oninput="validateTextInput(this)" />
             </div>
-
             <div>
-              <label for="className">4. Name of the class:</label>
+              <label for="courseCode">4. Course Code:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text" id="className" name="className" required placeholder="Ex."
-                oninput="validateTextInput(this)" />
+                type="text" id="courseCode" name="courseCode" required placeholder="Ex. UCAD-103" />
             </div>
-
             <div>
-              <label for="totalStudents">5. Number of Students:</label>
+              <label for="semester">5. Semester:</label>
+              <select
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                id="semester" name="semester" required>
+                <option value="" disabled selected>Select Semester</option>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+                <option value="VI">VI</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+              </select>
+            </div>
+            <div>
+              <label for="courseTitle">6. Course Title:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="courseTitle" name="courseTitle" required
+                placeholder="Ex. Mobile Application Development" oninput="validateTextInput(this)" />
+            </div>
+            <div>
+              <label for="academicYear">7. Academic Year:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="academicYear" name="academicYear" required placeholder="Ex. 2022-2023"
+                onblur="validateYearRangeInput(this)" onkeydown="checkEnter(event)" />
+            </div>
+            <div>
+              <label for="totalStudents">8. Number of Students:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 type="text" id="totalStudents" name="totalStudents" required placeholder="Ex. 60"
                 onkeydown="checkEnter(event)" />
             </div>
-          
+
             <div>
-              <label for="targetPercentage">6. Total Marks:</label>
+              <label for="classroom">9. Class:</label>
               <input
                 class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text" id="targetPercentage" name="targetPercentage" required placeholder="Ex. 80"
-                oninput="validateNumberInput(this)" />
+                type="text" id="classroom" name="classroom" required placeholder="Ex. FY-BCA"
+                oninput="validateTextInput(this)" />
             </div>
 
+            <div>
+              <label for="division">10. Division:</label>
+              <select
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                id="division" name="division">
+                <option value="" disabled selected>Division</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="notApplicable">Not Applicable</option>
+              </select>
+            </div>
 
+            <div>
+              <label for="coThreshold">11. CO Threshold%:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="coThreshold" name="coThreshold" required placeholder="Ex. 40"
+                oninput="validateNumberInput(this)" />
+            </div>
+            <div>
+              <label for="targetPercentage">12. Institute Target Percentage:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="targetPercentage" name="targetPercentage" required placeholder="Ex. 50"
+                oninput="validateNumberInput(this)" />
+            </div>
+            <div>
+              <label for="totalCO">13. Number of COs:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="totalCO" name="totalCO" required placeholder="Ex. 4"
+                oninput="validateNumberInput(this)" />
+            </div>
+            <div>
+              <label for="totalPO">14. Number of POs:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="totalPO" name="totalPO" required placeholder="Ex. 5"
+                oninput="validateNumberInput(this)" />
+            </div>
+            <div>
+              <label for="totalPSO">15. Number PSO:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="totalPSO" name="totalPSO" required placeholder="Ex. 3"
+                oninput="validateNumberInput(this)" />
+            </div>
+            <div>
+              <label for="TotalMarks">16. SEE Marks:</label>
+              <input
+                class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="text" id="TotalMarks" name="TotalMarks" required placeholder="Ex. 60"
+                oninput="validateNumberInput(this)" />
+            </div>
           </div>
           <div class="my-2 w-1/2 lg:w-1/4 mx-auto">
             <button
@@ -98,66 +183,6 @@
       </div>
     </div>
   </div>
-
-  <!--Table to enter marks of learning outcome-->
-
-  <div>
-    <div class="flex justify-center items-center min-h-screen" id="entireform">
-      <div class="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 mx-auto rounded-2xl shadow-2xl bg-white">
-        <div class="flex justify-center items-center">
-          <h1 class="font-bold uppercase text-5xl">Learning Details</h1>
-        </div><br><br>
-        <label style="display: inline; font-size: 16px">
-          <img src="img/icons8-info-24.png" alt="Information" style="display: inline; vertical-align: middle;">
-          Enter learning details
-        </label><br>
-        <form id="courseForm">
-          <div class="grid gap-5 md:grid-cols-2 mt-5">
-            <table class="w-full">
-              <thead>
-                <tr>
-                  <th class="text-left">Learning Outcome</th>
-                  <th class="text-left">Marks Allotted</th>
-                  <th class="text-left">Percentage</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Remembering</td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                </tr>
-                <tr>
-                  <td>Understanding</td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                </tr>
-                <tr>
-                  <td>Applying</td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                </tr>
-                <tr>
-                  <td>Analyze/Evaluate</td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                  <td><input type="text" class="w-full p-2 border border-gray-300"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="my-2 w-1/2 lg:w-1/4 mx-auto">
-            <button
-              class="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
-              type="submit">
-              Confirm
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  
-<!--Table to enter marks of learning outcome ends here-->
 
   <div id="displayInfo" class="bg-white p-4 mt-4 mx-4 rounded-lg shadow-lg hidden">
     <!-- Information will be displayed here -->
