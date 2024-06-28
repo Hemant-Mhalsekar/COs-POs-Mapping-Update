@@ -1,6 +1,6 @@
 ## **Description:**
 
-The "COs-POs-Mapping," is a sophisticated grading system designed to empower educators in evaluating and enhancing student performance. This comprehensive software streamlines the grading process, providing teachers with a user-friendly platform to assess, analyze, and track student achievements across various academic dimensions.
+The "COs-POs-Mapping," is a sophisticated grading system designed to empower educators in evaluating and enhancing student performance.<br> This comprehensive software streamlines the grading process, providing teachers with a user-friendly platform to assess, analyze, and track student achievements across various academic dimensions.
 
 ## Features:
 
